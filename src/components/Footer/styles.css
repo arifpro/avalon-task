@@ -1,0 +1,35 @@
+/*-------- footer --------------*/
+#footer {
+  background: #333 none repeat scroll 0 0;
+  color: #fff;
+  padding: 60px 0 120px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+#footer .social-links {
+  border-bottom: 2px dashed #444;
+  border-top: 2px dashed #444;
+  list-style: outside none none;
+  margin: 0 0 20px;
+  padding: 35px 0;
+}
+#footer .social-links li {
+  display: inline-block;
+  margin: 5px;
+}
+#footer .social-links a {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.2);
+  display: block;
+  font-size: 14px;
+  height: 36px;
+  line-height: 35px;
+  text-align: center;
+  width: 36px;
+}
+#footer .social-links a:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+}

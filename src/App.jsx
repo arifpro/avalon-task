@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import Counter from "./components/state_test/Counter";
+// import { Suspense } from "react";
+// import Counter from "./components/state_test/Counter";
 import {
   Preloader,
   Navbar,

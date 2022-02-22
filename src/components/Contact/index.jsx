@@ -1,3 +1,5 @@
+import './styles.css';
+
 const Contact = () => {
   return (
     <section id="contact">
@@ -28,7 +30,7 @@ const Contact = () => {
             <form>
               <div className="ajax-hidden">
                 <div className="form-group wow fadeInUp animated">
-                  <label for="c_name" className="sr-only">
+                  <label htmlFor="c_name" className="sr-only">
                     Name
                   </label>
                   <input
@@ -44,7 +46,7 @@ const Contact = () => {
                   data-wow-delay=".1s"
                   className="form-group wow fadeInUp animated"
                 >
-                  <label for="c_email" className="sr-only">
+                  <label htmlFor="c_email" className="sr-only">
                     Email
                   </label>
                   <input
@@ -89,9 +91,9 @@ const Contact = () => {
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6508922.473104964!2d-123.76275651635396!3d37.19583981824279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCalifornia%2C+United+States!5e0!3m2!1sen!2sin!4v1450994260631"
               width="100%"
               height="250"
-              frameborder="0"
+              frameBorder="0"
               style={{border:0}}
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
           <div

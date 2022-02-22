@@ -1,3 +1,5 @@
+import './styles.css';
+
 const Navbar = () => {
   return (
     <nav id="mainNav" className="navbar navbar-default navbar-fixed-top">
@@ -15,7 +17,7 @@ const Navbar = () => {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <img src="/assets/img/logo.png" alt="Logo" />
             </a>
           </div>

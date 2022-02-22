@@ -1,0 +1,50 @@
+/*-------- popup css --------------*/
+.imghover {
+  position: relative;
+}
+.hover-bg {
+  content: "";
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: all 0.3s ease 0s;
+  vertical-align: middle;
+  width: 100%;
+}
+.hover-bg:hover {
+  background: rgba(34, 34, 34, 0.7);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+  opacity: 1;
+}
+.hover-bg:hover .camera {
+  color: #fff;
+  font-size: 50px;
+  padding: 70% 0 0;
+  transition: all 0.3s ease 0s;
+}
+.hover-bg:hover.camera::before {
+  color: #fff;
+  font-size: 50px;
+  padding: 70% 0 0;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+.hover-bg:hover .camera::after {
+  color: #fff;
+  font-size: 50px;
+  padding: 70% 0 0;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+}

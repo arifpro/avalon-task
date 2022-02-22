@@ -1,3 +1,5 @@
+import './styles.css';
+
 const Price = () => {
   return (
     <section id="Price" className="">
