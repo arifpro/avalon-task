@@ -1,9 +1,31 @@
-import Counter from "./components/Counter";
+import { Suspense } from "react";
+import Counter from "./components/state_test/Counter";
+import {
+  Preloader,
+  Navbar,
+  Header,
+  About,
+  HowItWorks,
+  Screenshots,
+  Price,
+  Contact,
+  Footer,
+} from "./components";
 
 const App = () => {
   return (
     <div>
-      <Counter />
+      {/* <Counter /> */}
+      {/* <Suspense fallback={<Preloader />}></Suspense> */}
+      <Preloader />
+      <Navbar />
+      <Header />
+      <About />
+      <HowItWorks />
+      <Screenshots />
+      <Price />
+      <Contact />
+      <Footer />
     </div>
   );
 };
