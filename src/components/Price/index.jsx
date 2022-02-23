@@ -1,6 +1,9 @@
-import './styles.css';
+import { useSelector } from "react-redux";
+import "./styles.css";
 
 const Price = () => {
+  const price = useSelector((state) => state.price);
+
   return (
     <section id="Price" className="">
       <div className="container">
@@ -24,105 +27,58 @@ const Price = () => {
             </p>
           </div>
 
-          <div className="col-xs-12 col-sm-4 col-md-4 wow fadeInLeft animated">
-            <div className="price-wrapper ">
-              <h3 className="price-title">Students</h3>
-              <div className="price">
-                <div className="value-box">
-                  <div className="value-box-content">
-                    <span className="value">
-                      <i></i>
-                      <span className="number">FREE</span>
-                    </span>
-                    <span className="month invisible"></span>
-                  </div>
-                </div>
-
-                <div className="content-box">
-                  <ul>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                  </ul>
-                </div>
-                <div className="sign-box">
-                  <a href="#">
-                    <span>Sign Up</span>
-                  </a>
-                </div>
-              </div>
+          {price?.map((item, index) => (
+            <div key={item.id}>
+              <PriceListItem
+                animation={item.animation}
+                title={item.title}
+                number={item.number}
+                month={item.month}
+                content={item.content}
+              />
             </div>
-          </div>
-          <div className="col-xs-12 col-sm-4 col-md-4 wow zoomIn animated">
-            <div className="price-wrapper ">
-              <h3 className="price-title">Small</h3>
-              <div className="price">
-                <div className="value-box">
-                  <div className="value-box-content">
-                    <span className="value">
-                      <i></i>
-                      <span className="number"> $10 </span>
-                    </span>
-                    <span className="month">per month</span>
-                  </div>
-                </div>
-
-                <div className="content-box">
-                  <ul>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                  </ul>
-                </div>
-                <div className="sign-box">
-                  <a href="#">
-                    <span>Sign Up</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-12 col-sm-4 col-md-4 wow zoomIn animated">
-            <div className="price-wrapper ">
-              <h3 className="price-title">Standard</h3>
-              <div className="price standard">
-                <div className="value-box">
-                  <div className="value-box-content">
-                    <span className="value">
-                      <span className="number">$50</span>
-                    </span>
-                    <span className="month">per month</span>
-                  </div>
-                </div>
-
-                <div className="content-box">
-                  <ul>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                  </ul>
-                </div>
-                <div className="sign-box">
-                  <a href="#">
-                    <span>Sign Up</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
+const PriceListItem = ({
+  animation = "",
+  title,
+  number,
+  month = "",
+  content,
+}) => (
+  <div className={`col-xs-12 col-sm-4 col-md-4 wow ${animation} animated`}>
+    <div className="price-wrapper">
+      <h3 className="price-title">{title}</h3>
+      <div className={`price ${title === "Standard" ? "standard" : ""}`}>
+        <div className="value-box">
+          <div className="value-box-content">
+            <span className="value">
+              <span className="number">{number}</span>
+            </span>
+            <span
+              className={`month ${month.length === 0 ? "invisible" : ""}`}
+            ></span>
+          </div>
+        </div>
+
+        <div className="content-box">
+          <ul>
+            {content?.map((item, i) => (
+              <li key={item + i}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="sign-box">
+          <button>Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default Price;

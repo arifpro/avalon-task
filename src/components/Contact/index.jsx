@@ -1,6 +1,26 @@
-import './styles.css';
+import { useState } from "react";
+import "./styles.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    alert(JSON.stringify(formData));
+  };
+
   return (
     <section id="contact">
       <div className="container">
@@ -27,18 +47,20 @@ const Contact = () => {
             className="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated"
             data-wow-delay=".1s"
           >
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="ajax-hidden">
                 <div className="form-group wow fadeInUp animated">
-                  <label htmlFor="c_name" className="sr-only">
+                  <label htmlFor="name" className="sr-only">
                     Name
                   </label>
                   <input
                     type="text"
                     placeholder="Name"
-                    name="c_name"
+                    name="name"
                     className="form-control"
-                    id="c_name"
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -46,15 +68,17 @@ const Contact = () => {
                   data-wow-delay=".1s"
                   className="form-group wow fadeInUp animated"
                 >
-                  <label htmlFor="c_email" className="sr-only">
+                  <label htmlFor="email" className="sr-only">
                     Email
                   </label>
                   <input
                     type="email"
                     placeholder="E-mail"
-                    name="c_email"
+                    name="email"
                     className="form-control"
-                    id="c_email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -65,9 +89,11 @@ const Contact = () => {
                   <textarea
                     placeholder="Message"
                     rows="7"
-                    name="c_message"
-                    id="c_message"
+                    name="message"
+                    id="message"
                     className="form-control"
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
 
@@ -92,7 +118,7 @@ const Contact = () => {
               width="100%"
               height="250"
               frameBorder="0"
-              style={{border:0}}
+              style={{ border: 0 }}
               allowFullScreen
             ></iframe>
           </div>

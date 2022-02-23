@@ -16,7 +16,7 @@
   padding: 1.3em 1em;
   text-align: center;
   box-shadow: 0 -2px 2px #f5f5f5;
-  -webket-box-shadow: 0 -2px 2px #f5f5f5;
+  -webkit-box-shadow: 0 -2px 2px #f5f5f5;
   -moz-box-shadow: 0 -2px 2px #f5f5f5;
   font-family: "Oswald";
 }
@@ -84,18 +84,23 @@
   padding: 10px 10px 25px;
   text-align: center;
   box-shadow: 0 2px 2px #ddd;
-  -webket-box-shadow: 0 2px 2px #ddd;
+  -webkit-box-shadow: 0 2px 2px #ddd;
   -moz-box-shadow: 0 2px 2px #ddd;
 }
-.sign-box a {
+
+.sign-box button {
   border: 1px solid;
   border-radius: 3px;
   color: #ff4c00;
   padding: 10px 0;
   text-decoration: none;
   position: relative;
+  background: #fff;
+  width: 110px;
+  position: relative;
+  z-index: 999;
 }
-.sign-box a::after {
+.sign-box button::after {
   background: #fff none repeat scroll 0 0;
   bottom: 0;
   content: "";
@@ -106,7 +111,7 @@
   width: 110px;
   z-index: -1;
 }
-.sign-box a:hover::after {
+.sign-box button:hover::after {
   background: #ff4c00 none repeat scroll 0 0;
   bottom: 0;
   content: "";
@@ -117,14 +122,9 @@
   transition: all 0.3s ease 0s;
   width: 110px;
   z-index: -1;
+  border-radius: 3px;
 }
-.sign-box a span {
-  position: relative;
-  z-index: 999;
-  padding: 10px 30px;
-  width: 100%;
-}
-.sign-box a span:hover {
+.sign-box button:hover {
   color: #fff;
 }
 
