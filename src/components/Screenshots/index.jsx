@@ -1,4 +1,4 @@
-import './styles.css';
+import "./styles.css";
 
 const Screenshots = () => {
   return (
@@ -31,108 +31,19 @@ const Screenshots = () => {
               >
                 <div className="span12">
                   <div id="owl-demo" className="owl-carousel">
-                    <div className="item">
-                      <div
-                        className="imghover"
-                        data-toggle="modal"
-                        data-target="#exampleModal"
-                        data-whatever="@mdo"
-                      >
-                        <img src="/assets/img/owl1.jpg" alt="Owl" />
-                        <div className="hover-bg">
-                          <i className="fa fa-camera camera"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div
-                        className="imghover"
-                        data-toggle="modal"
-                        data-target="#exampleModa2"
-                        data-whatever="@mdo"
-                      >
-                        <img src="/assets/img/owl2.jpg" alt="Owl" />
-                        <div className="hover-bg">
-                          <i className="fa fa-camera camera"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div
-                        className="imghover"
-                        data-toggle="modal"
-                        data-target="#exampleModa3"
-                        data-whatever="@mdo"
-                      >
-                        <img src="/assets/img/owl3.jpg" alt="Owl" />
-                        <div className="hover-bg">
-                          <i className="fa fa-camera camera"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <div
-                        className="imghover"
-                        data-toggle="modal"
-                        data-target="#exampleModa4"
-                        data-whatever="@mdo"
-                      >
-                        <img src="/assets/img/owl4.jpg" alt="Owl" />
-                        <div className="hover-bg">
-                          <i className="fa fa-camera camera"></i>
-                        </div>
-                      </div>
-                    </div>
+                    <Item target="1" />
+                    <Item target="2" />
+                    <Item target="3" />
+                    <Item target="4" />
                   </div>
                 </div>
               </div>
-              <div
-                className="modal fade"
-                id="exampleModal"
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalLabel"
-              >
-                <div className="modal-dialog" role="document">
-                  <img src="/assets/img/owl1.jpg" alt="Owl" />
-                </div>
-              </div>
 
-              <div
-                className="modal fade"
-                id="exampleModa2"
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalLabe2"
-              >
-                <div className="modal-dialog" role="document">
-                  <img src="/assets/img/owl2.jpg" alt="Owl" />
-                </div>
-              </div>
-
-              <div
-                className="modal fade"
-                id="exampleModa3"
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalLabe3"
-              >
-                <div className="modal-dialog" role="document">
-                  <img src="/assets/img/owl3.jpg" alt="Owl" />
-                </div>
-              </div>
-
-              <div
-                className="modal fade"
-                id="exampleModa4"
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalLabe4"
-              >
-                <div className="modal-dialog" role="document">
-                  <img src="/assets/img/owl4.jpg" alt="Owl" />
-                </div>
-              </div>
+              {/* modals */}
+              <ItemModal target="1" />
+              <ItemModal target="2" />
+              <ItemModal target="3" />
+              <ItemModal target="4" />
             </div>
           </div>
         </div>
@@ -140,5 +51,35 @@ const Screenshots = () => {
     </section>
   );
 };
+
+const Item = ({ target }) => (
+  <div className="item">
+    <div
+      className="imghover"
+      data-toggle="modal"
+      data-target={`#exampleModal${target}`}
+      data-whatever="@mdo"
+    >
+      <img src={`/assets/img/owl${target}.jpg`} alt={`Owl${target}`} />
+      <div className="hover-bg">
+        <i className="fa fa-camera camera"></i>
+      </div>
+    </div>
+  </div>
+);
+
+const ItemModal = ({ target }) => (
+  <div
+    className="modal fade"
+    id={`exampleModal${target}`}
+    tabIndex="-1"
+    role="dialog"
+    aria-labelledby={`exampleModalLabel${target}`}
+  >
+    <div className="modal-dialog" role="document">
+      <img src={`/assets/img/owl${target}.jpg`} alt={`Owl${target}`} />
+    </div>
+  </div>
+);
 
 export default Screenshots;

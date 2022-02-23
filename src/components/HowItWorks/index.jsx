@@ -1,4 +1,4 @@
-import './styles.css';
+import "./styles.css";
 
 const HowItWorks = () => {
   return (
@@ -23,63 +23,29 @@ const HowItWorks = () => {
             </p>
           </div>
 
+          {/* left side */}
           <div className="col-xs-12 col-sm-4 col-md-4">
-            <div className="row">
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInLeft animated textright"
-                data-wow-delay=".5s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInRight animated"
-                data-wow-delay=".5s"
-              >
-                <i className="fa fa-apple iconfont"></i>
-              </div>
-            </div>
-            <div className="row">
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInLeft animated textright"
-                data-wow-delay=".6s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInRight animated"
-                data-wow-delay=".6s"
-              >
-                <i className="fa fa-rocket iconfont"></i>
-              </div>
-            </div>
-            <div className="row">
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInLeft animated textright"
-                data-wow-delay=".7s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInRight animated"
-                data-wow-delay=".7s"
-              >
-                <i className="fa fa-film iconfont"></i>
-              </div>
-            </div>
+            <Item
+              delayTime=".5s"
+              iconName="apple"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
+            <Item
+              delayTime=".6s"
+              iconName="rocket"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
+            <Item
+              delayTime=".7s"
+              iconName="film"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
           </div>
 
+          {/* center side */}
           <div
             className="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated textcenter"
             data-wow-delay=".4s"
@@ -87,66 +53,63 @@ const HowItWorks = () => {
             <img src="/assets/img/slide-bg.png" alt="slide-bg" />
           </div>
 
+          {/* right side */}
           <div className="col-xs-12 col-sm-4 col-md-4">
-            <div className="row">
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInLeft animated"
-                data-wow-delay=".5s"
-              >
-                <i className="fa fa-android iconfont2"></i>
-              </div>
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInRight animated textleft"
-                data-wow-delay=".5s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInLeft animated"
-                data-wow-delay=".6s"
-              >
-                <i className="fa fa-css3 iconfont2"></i>
-              </div>
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInRight animated textleft"
-                data-wow-delay=".6s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div
-                className="col-xs-2 col-sm-2 col-md-2 wow fadeInLeft animated"
-                data-wow-delay=".7s"
-              >
-                <i className="fa fa-users iconfont2"></i>
-              </div>
-              <div
-                className="col-xs-10 col-sm-10 col-md-10 wow fadeInRight animated textleft"
-                data-wow-delay=".7s"
-              >
-                <h3>Lorem ipsum</h3>
-                <p>
-                  Typi non habent claritatem insitam; est usus legentis in iis
-                  qui facit eorum.
-                </p>
-              </div>
-            </div>
+            <Item
+              right
+              delayTime=".5s"
+              iconName="android"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
+
+            <Item
+              right
+              delayTime=".6s"
+              iconName="css3"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
+
+            <Item
+              right
+              delayTime=".7s"
+              iconName="users"
+              title="Lorem ipsum"
+              desc="Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum."
+            />
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+const Item = ({ delayTime, iconName, title, desc, right }) => (
+  <section className="row">
+    {right && <IconSection delayTime={delayTime} iconName={iconName} right />}
+    <aside
+      className={`col-xs-10 col-sm-10 col-md-10 wow fadeIn${
+        !right ? "Left" : "Right"
+      } animated text${right ? "left" : "right"}`}
+      data-wow-delay={delayTime}
+    >
+      <h3>{title}</h3>
+      <p>{desc}</p>
+    </aside>
+    {!right && <IconSection delayTime={delayTime} iconName={iconName} />}
+  </section>
+);
+
+const IconSection = ({ delayTime, iconName, right }) => (
+  <aside
+    className={`col-xs-2 col-sm-2 col-md-2 wow fadeIn${
+      right ? "Left" : "Right"
+    } animated`}
+    data-wow-delay={delayTime}
+  >
+    <i className={`fa fa-${iconName} ${right ? "iconfont2" : "iconfont"}`}></i>
+  </aside>
+);
 
 export default HowItWorks;

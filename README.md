@@ -9,4 +9,7 @@
 ## deployment
 
 - deploy link: [https://avalon-task.vercel.app](https://avalon-task.vercel.app)
-- 
+
+## bugs
+
+- navbar scroll color change

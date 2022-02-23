@@ -136,9 +136,9 @@ const Contact = () => {
                   <br />
                   Mobile: 01 234-56786
                   <br />
-                  E-mail: <a href="#">info@templatestock.com</a>
+                  E-mail: <a href="#/">info@templatestock.com</a>
                 </p>
-                <a href="#">Get directions on the map</a> →
+                <a href="#/">Get directions on the map</a> →
               </div>
             </section>
           </div>
